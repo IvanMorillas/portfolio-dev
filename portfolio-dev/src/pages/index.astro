@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro';
+import LinkedInIcon from '../icons/LinkedIn.astro';
+import SocialPill from '../components/SocialPill.astro';
+import GitHubIcon from '../icons/GitHub.astro';
+import MailIcon from '../icons/Mail.astro';
+import Experience from '../components/Experience.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Briefcase from '../icons/Briefcase.astro';
+import Code from '../icons/Code.astro';
+import Projects from '../components/Projects.astro';
+import Script from '../icons/Script.astro';
+import Skills from '../components/Skills.astro';
+---
+
+<Layout 
+	title="Portfolio de Ivan - Desarrollador y Programador Web"
+	description="Contrata a Ivan para crear tu aplicación web.">
+	<main class="px-4">
+		<SectionContainer class="py-44 pb-32">
+			<img 
+				class="rounded-full size-24 mb-4" 
+				src="https://media.licdn.com/dms/image/D4D03AQFEpGIZpCp5Hw/profile-displayphoto-shrink_100_100/0/1717251924032?e=1722470400&v=beta&t=_waZYh83DlAA2B3ZDYYBEtEx967A66umrZee3zlCxoo" 
+				alt="photo" 
+			/>
+			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
+				Hey, I'm Ivan! 
+				<a target="_blank" rel="noopener noreferrer" class="flex justify-center items-center"><Badge>Available to work</Badge></a>
+			</h1>
+			<h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
+				I'm a computer science student looking for practical experience. 
+				Specialized in Full Stack and Web Developer.
+				Eager to collaborate on projects and be able to improve my knowledge and learn more. 
+				From Tarragona, Spain.
+			</h2>
+			<nav class="flex gap-4 mt-8 flex-wrap">
+				<SocialPill href="https://www.linkedin.com/in/ivanmorillasgomez/">
+					<LinkedInIcon class="size-4 md:size-6" />
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="https://github.com/IvanMorillas">
+					<GitHubIcon class="size-4 md:size-6" />
+					GitHub
+				</SocialPill>
+				<SocialPill href="mailto:ivanmg_09@hotmail.com">
+					<MailIcon class="size-4 md:size-6" />
+					ivanmg_09@hotmail.com
+				</SocialPill>
+			</nav>
+		</SectionContainer>
+		<SectionContainer id="experience">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<Briefcase class="size-8" />
+				Education
+			</h2>
+			<Experience />
+		</SectionContainer>
+		<SectionContainer id="projects">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<Code class="size-8" />
+				Projects
+			</h2>
+			<Projects />
+		</SectionContainer>
+		<SectionContainer id="skills">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<Script class="size-8" />
+				Skills
+			</h2>
+			<Skills />
+		</SectionContainer>
+	</main>
+</Layout>
+

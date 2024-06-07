@@ -1,0 +1,101 @@
+---
+import DataBase from "../icons/DataBase.astro"
+import Frontend from "../icons/Frontend.astro"
+import Backend from "../icons/Backend.astro"
+
+const LENGUAGES = {
+    Java: {
+        name: 'Java',
+        class: 'bg-[#003159] text-white'
+    },
+    C: {
+        name: 'C',
+        class: 'bg-[#003159] text-white'
+    },
+    R: {
+        name: 'R',
+        class: 'bg-[#003159] text-white'
+    },
+    Scala: {
+        name: 'Scala',
+        class: 'bg-[#003159] text-white'
+    },
+    NodeJS: {
+        name: 'Node.js',
+        class: 'bg-[#003159] text-white'
+    },
+    Python: {
+        name: 'Python',
+        class: 'bg-[#003159] text-white'
+    },
+    Linux: {
+        name: 'Linux',
+        class: 'bg-[#003159] text-white'
+    },
+    Astro: {
+        name: 'Astro',
+        class: 'bg-[#003159] text-white'
+    },
+    HTML: {
+        name: 'HTML',
+        class: 'bg-[#003159] text-white'
+    },
+    JavaScript: {
+        name: 'JavaScript',
+        class: 'bg-[#003159] text-white'
+    },
+    React: {
+        name: 'React',
+        class: 'bg-[#003159] text-white'
+    },
+    CSS: {
+        name: 'CSS',
+        class: 'bg-[#003159] text-white'
+    },
+    Tailwind: {
+        name: 'TailwindCSS',
+        class: 'bg-[#003159] text-white'
+    },
+    MySQL: {
+        name: 'MySQL',
+        class: 'bg-[#003159] text-white'
+    }
+}
+
+const SKILLS = [
+    {
+        title: 'Frontend',
+        lenguages: [LENGUAGES.Astro, LENGUAGES.CSS, LENGUAGES.HTML, LENGUAGES.JavaScript, LENGUAGES.React, LENGUAGES.Tailwind],
+        icon: Frontend
+    },
+    {
+        title: 'Backend',
+        lenguages: [LENGUAGES.C, LENGUAGES.Java, LENGUAGES.NodeJS, LENGUAGES.Python, LENGUAGES.R, LENGUAGES.Scala],
+        icon: Backend
+    },
+    {
+        title: 'DataBase',
+        lenguages: [LENGUAGES.MySQL],
+        icon: DataBase
+    }
+]
+---
+
+{
+    SKILLS.map(({ title, lenguages, icon:Icon }) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-100 mb-2 pt-4 flex items-center gap-2">
+                <Icon /> {title}
+            </h3>
+            <ul class="flex gap-x-2 flex-row mb-2">
+                {lenguages.map(lenguage => (
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-xs py-1 px-2 ${lenguage.class}`}>
+                            {lenguage.name}
+                        </span>                
+                    </li>
+                ))}
+            </ul>
+        </article>
+    ))
+}

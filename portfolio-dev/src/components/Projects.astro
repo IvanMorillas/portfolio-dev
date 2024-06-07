@@ -1,0 +1,87 @@
+---
+import MySQL from '../icons/MySQL.astro'
+import Spring from '../icons/Spring.astro'
+import Tiger from '../icons/Tiger.astro'
+import Python from '../icons/Python.astro'
+import Scala from '../icons/Scala.astro'
+
+const TAGS = {
+    SQL: {
+        name: 'MySQL',
+        class: 'bg-[#003159] text-white',
+        icon: MySQL
+    },
+    JavaSpring: {
+        name: 'JavaSpring',
+        class: 'bg-[#003159] text-white',
+        icon: Spring
+    },
+    Tiger: {
+        name: 'GraphQL',
+        class: 'bg-[#003159] text-white',
+        icon: Tiger
+    },
+    Python: {
+        name: 'Python',
+        class: 'bg-[#003159] text-white',
+        icon: Python
+    },
+    Scala: {
+        name: 'Scala',
+        class: 'bg-[#003159] text-white',
+        icon: Scala
+    }
+}
+const PROJECTS = [
+    {
+        title: 'ETL Movies and Series Database',
+        description: 'ETL process to extract data from different sources, transform it and load it into a MySQL database. The data is then used to create a REST API with Java Spring Boot.',
+        link: 'https://github.com/IvanMorillas/SIO',
+        image: '/projects/etl.webp',
+        tags: [TAGS.SQL, TAGS.JavaSpring, TAGS.Tiger]
+    },
+    {
+        title: ' Communication models and middleware',
+        description: 'Implementation of a client-server communication model using TCP and UDP protocols. The middleware is implemented in Python and the client and server in C.',
+        link: 'https://github.com/IvanMorillas/SD-task1-Communication',
+        image: '/projects/sd1.webp',
+        tags: [TAGS.Python]
+    },
+    {
+        title: 'Function as a Service - Design and implementation of a functions system.',
+        description: 'Design and implementation of a function system that allows the execution of functions in a serverless way. The system is implemented in Python and uses a REST API to communicate with the client.',
+        link: 'https://github.com/IvanMorillas/TAP',
+        image: '/projects/faas.webp',
+        tags: [TAGS.Python, TAGS.Scala]
+    }
+]
+---
+
+{
+    PROJECTS.map(({ title, description, tags, image, link }) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-100 mb-2">
+                {title}
+            </h3>
+            <p class="text-lg mb-4 text-pretty">
+                {description}
+            </p>
+            <ul class="flex gap-x-2 flex-row mb-2">
+                {tags.map(tag => (
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-xs py-1 px-2 ${tag.class}`}>
+                            <tag.icon class="size-4"/>
+                            {tag.name}
+                        </span>                
+                    </li>
+                ))}
+            </ul>
+            <a href={link}>
+                <img 
+                class="rounded shadow-2xl shadow-white/20 hover:scale-105 transition mb-8 pt-2" 
+                src={image} 
+                alt={`Screenshot of ${title} ${image}`}/>
+            </a>
+        </article>
+    ))
+}

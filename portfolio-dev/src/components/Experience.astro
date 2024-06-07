@@ -1,0 +1,33 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+    {
+        date: 'September 2019 - June 2025',
+        title: 'Computer Science Degree',
+        description: 'I am currently studying for a degree in Computer Science at the URV. I have learned a lot about programming, algorithms, and data structures.',
+        link: "https://www.urv.cat/es/"
+    },
+    {
+        date: 'July 2023',
+        title: 'First Certificate in English (FCE)',
+        description: 'I have obtained the First Certificate in English (FCE) from the University of Cambridge. I have learned a lot about English grammar, vocabulary, and pronunciation.',
+    },
+    {
+        date: 'September 2016 - June 2018',
+        title: 'Certificate of Baccalaureate',
+        description: 'I have obtained the Certificate of Baccalaureate from the IES Cambrils. I have learned a lot about mathematics, physics, chemistry, and biology.',
+    }
+]
+---
+
+<ol class="relative border-s border-gray-200 ml-3">     
+    {
+        EXPERIENCE.map(experience => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }             
+</ol>
+
